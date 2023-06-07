@@ -1,0 +1,4 @@
+Testing serverless applications can be complex, and testing in the cloud can add additional costs and complexities. In this talk, we will explore an approach to testing Azure Functions applications using Behavior Driven Design (BDD) without relying on cloud resources.
+We will discuss the benefits of cloudless testing, demonstrate how to set up a local development environment for testing Azure Functions applications using BDD, and cover best practices for integrating cloudless testing into CI/CD pipelines.
+Attendees will learn how to test serverless applications effectively using BDD and gain an understanding of the tools and techniques needed to get started. We will also discuss the limitations of this approach and when testing in the cloud may still be necessary.
+By the end of this talk, attendees will have a better understanding of how to approach testing for serverless applications and the benefits of using BDD for cloudless testing.
