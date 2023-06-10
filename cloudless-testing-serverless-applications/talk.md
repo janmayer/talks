@@ -157,7 +157,7 @@ BDD is a way for software teams to work that closes the gap between business peo
 ### Feature Tests Best Practices
 
 1. Part of your codebase (can be refactored!) <!-- e.g. unify steps definitions -->
-2. Should be readable by anyone* <!-- strength is crossing from business to tech, use business terms, some technical details are ok -->
+2. Should be readable <!-- strength is crossing from business to tech, use business terms, some technical details are ok -->
 3. Behavior, not Procedures <!-- less like imperative tests, declarative rather than imperative ​-->
 4. One Scenario, One Behavior
 5. Hide irrelevant details  <!-- for that Behavior, especially when setting up given steps -->
