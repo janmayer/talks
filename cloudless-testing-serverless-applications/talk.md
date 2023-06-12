@@ -23,14 +23,20 @@ TODO: Slide about VM
 ![bg](assets/cloud_toolbelt.png)
 
 <!--
-I want to give you two more tools for your toolbelt in your cloud journey
+I want to give you two more tools for your tool belt in your cloud journey
 - Behavior
 - Cloudless
 -->
 
 ---
 
+> The hardest single part of building a software system is deciding precisely what to build.
+
+<p style="font-size: 75%; text-align:right">- Fred Brooks</p>
+
+<!--
 ## Behavior-Driven Design
+-->
 
 > The hardest single part of building a software system is deciding precisely what to build.
 
@@ -40,9 +46,10 @@ I want to give you two more tools for your toolbelt in your cloud journey
 
 ### New requirement: <br> Car Descriptions
 
-> So, we need a detailed description for individual cars to display on the frontend and in our PDFs for vendors. The cars are highly customizable, so we every description will be different.
+> We need a detailed description for individual cars <br> to display on the frontend and in our PDFs for vendors. The cars are highly customizable, so we every description will be different.
 
 <!--
+- Made up Example
 - Customer heard about AI
 - Super Hot new thing
 -->
@@ -58,8 +65,6 @@ I want to give you two more tools for your toolbelt in your cloud journey
 - What should the user experience look like?
 
 <!--
-The hardest single part of building a software system is deciding precisely what to build.
-
 The first step in any software development project is to define the behavior.
 - I can see it in your heads that you are thinking about it.
 - A lot of time is spend figuring out what exactly is it that the end result should do
@@ -187,6 +192,12 @@ BDD is a way for software teams to work that closes the gap between business peo
 -->
 
 ---
+System Agnostic
+Language Agnostic
+
+---
+
+## Lets build it serverless
 
 ![height:400](assets/arch.png)
 
