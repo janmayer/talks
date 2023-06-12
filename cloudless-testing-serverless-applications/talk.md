@@ -162,39 +162,103 @@ BDD is a way for software teams to work that closes the gap between business peo
 
 ---
 
-## Lets build it serverless
+### Feature Tests Best Practices
+
+1. Part of your codebase (can be refactored!) <!-- e.g. unify steps definitions -->
+2. Should be readable <!-- strength is crossing from business to tech, use business terms, some technical details are ok -->
+3. Behavior, not Procedures <!-- less like imperative tests, declarative rather than imperative ​-->
+4. One Scenario, One Behavior
+5. Hide irrelevant details  <!-- for that Behavior, especially when setting up given steps -->
+
+---
+
+### Automation Steps Best Practices
+
+1. Try not to lie in your steps
+2. You can take shortcuts in steps <!-- write directly to the database -->
+3. If you think you need tests for your tests, <br> you have gone too far
+
+---
+
+## Serverless
+
+![bg](assets/serverless.png)
+
+<!--
+- So far, completely technology agnostic
+-->
+
+---
 
 ![height:400](assets/arch.png)
 
 ---
 
-## Build for Production
+### Build for Production
 
-- no `if test`
-- no changes to code to make it "testable"
+- It should run in Production <!-- (The only thing everyone can agree on the only   thing anyone can agree on),  all tests is just to support this -->
+  - no `if $test`
+  - no changes to code to make it "testable"
 - should also run on
-    - several other stages
-    - Continuous Integration Pipelines
-        - probably many PR in parallel
-    - Locally for developers
+  - several other stages
+  - Continuous Integration Pipelines
+    - probably many PR in parallel
+  - Locally for developers
 
 <!--
 - The only thing everyone can agree on the only thing anyone can agree on)
 - all tests are just to support this
+<!--
+- Likely several other stages
+  - preprod/staging/tui
+  - dev
 -->
 
 ---
 
-## How to prevent conflicts?
+## Problems when testing
+
+1. How to handle many parallel test runs?
+
+  - Continuous Integration Pipelines <!-- probably many PR in parallel -->
+  - Many developers <!-- should they all have their -->
+  - Each test run needs independent resources (especially databases & event distributors)
+
+2. How to test failure cases?
+  - Can't force real external services to fail
+  - Mock external systems <!-- Don't actually call external systems -->
+
+<!--
+TODO: Illustration
 
 - Each test run needs independent resources
 - (especially databases & event distributors)
 - Don't actually call external systems
 - Mock external systems
 
+-->
+
 ---
 
-# Cloudless Demo
+## Cloudless?
+
+![bg](assets/cloudless.png)
+
+---
+
+### Run Azure Functions locally
+
+TODO: Live Demo
+
+---
+
+### Docker Compose
+
+- also a good way into serverless for K8S-ler
+
+---
+
+### Wiremock
 
 ---
 
