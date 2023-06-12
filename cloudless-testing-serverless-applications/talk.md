@@ -32,6 +32,10 @@ I want to give you two more tools for your toolbelt in your cloud journey
 
 ## Behavior-Driven Design
 
+> The hardest single part of building a software system is deciding precisely what to build.
+
+<p style="font-size: 75%; text-align:right">- Fred Brooks</p>
+
 ---
 
 ### New requirement: <br> Car Descriptions
@@ -45,7 +49,7 @@ I want to give you two more tools for your toolbelt in your cloud journey
 
 ---
 
-### What Should the Software Do?
+### Figure out what the software should do ...
 
 - What features should the software have?
   - Features & Acceptance Criteria
@@ -74,13 +78,7 @@ Contracts (Swagger API)
 
 ---
 
-> The hardest single part of building a software system is deciding precisely what to build.
-
-<p style="font-size: 75%; text-align:right">- Fred Brooks</p>
-
----
-
-### Write it down ...
+### ... write it down ...
 
 ```gherkin
 # features/generate_vehicle_descriptions.feature
@@ -110,7 +108,7 @@ Respect the integrity of the step types: Givens set up initial state, Whens perf
 
 ---
 
-### .. and automate it
+### ... and automate it
 
 ```python
 # features/steps/steps.py
