@@ -28,8 +28,6 @@ I want to give you two more tools for your toolbelt in your cloud journey
 
 ## Behavior-Driven Design
 
-> The hardest single part of building a software system is deciding precisely what to build. <br><br> - Fred Brooks
-
 ---
 
 ### New requirement: <br> Car Descriptions
@@ -72,7 +70,7 @@ Contracts (Swagger API)
 
 ---
 
-### Formulation: What it should do
+### Write it down ...
 
 ```gherkin
 # features/generate_vehicle_descriptions.feature
@@ -102,7 +100,7 @@ Respect the integrity of the step types: Givens set up initial state, Whens perf
 
 ---
 
-### Automation: What it actually does
+### .. and automate it
 
 ```python
 # features/steps/steps.py
@@ -154,104 +152,50 @@ BDD is a way for software teams to work that closes the gap between business peo
 
 ---
 
-### Feature Tests Best Practices
-
-1. Part of your codebase (can be refactored!) <!-- e.g. unify steps definitions -->
-2. Should be readable <!-- strength is crossing from business to tech, use business terms, some technical details are ok -->
-3. Behavior, not Procedures <!-- less like imperative tests, declarative rather than imperative ​-->
-4. One Scenario, One Behavior
-5. Hide irrelevant details  <!-- for that Behavior, especially when setting up given steps -->
-
----
-
-### Automation Steps Best Practices
-
-1. Try not to lie in your steps
-2. You can take shortcuts in steps <!-- write directly to the database -->
-3. If you think you need tests for your tests, <br> you have gone too far
-
----
-
 ## Lets build it serverless
 
-![height:500](assets/arch.png)
+![height:400](assets/arch.png)
 
 ---
 
 ## Build for Production
 
-- It should run in Production (The only thing everyone can agree on the only thing anyone can agree on) <!-- all tests is just to support this -->
-- Likely several other stages
-  - preprod/staging/tui
-  - dev
-- Continuous Integration Pipelines
-  - probably many PR in parallel
-- Many developers
-
----
-
-## Non-negotiables
-
 - no `if test`
 - no changes to code to make it "testable"
+- should also run on
+    - several other stages
+    - Continuous Integration Pipelines
+        - probably many PR in parallel
+    - Locally for developers
 
-## Negotiable
-
-- Don't actually call external systems
-- Mock external systems
+<!--
+- The only thing everyone can agree on the only thing anyone can agree on)
+- all tests are just to support this
+-->
 
 ---
 
 ## How to prevent conflicts?
 
-- Each test run needs independent resources (especially databases & event distributors)
+- Each test run needs independent resources
+- (especially databases & event distributors)
+- Don't actually call external systems
+- Mock external systems
 
 ---
 
-```python
-# vehicle_service.py
-@given("the Vehicle Service has information about a vehicle")
-def setup_existing_vehicle(context)
-    mock_existing_vehicle(context.vs, 200)
-```
+# Cloudless Demo
 
 ---
 
-# Cloudless ?!
+## Recap
+
+-
+- It's all http? Always has been. Wiremock
 
 ---
 
-Docker Compose
-- also a good way into serverless for K8S-ler
-
----
-
-Wiremock
-
----
-
-### Look at me, I'm microsoft now
-
-```yaml
-login.microsoftonline.com:
-    image: wiremock/wiremock
-    volumes:
-        - ./build:/certs
-        - ./features/mocks/oauth:/home/wiremock/mappings
-    command: "--disable-banner --global-response-templating --https-port 443 \
-            --https-keystore /certs/oauth.p12 --keystore-password password"
-```
-
-```python
-token = (
-    ClientSecretCredential(tenant_id=..., client_id=..., client_secret=...)
-    .get_token(scope=...).token
-)
-```
-
----
-
-# Is this even a good Idea?
+## Is this even a good Idea?
 
 Understand why you are doing something
 
@@ -290,40 +234,3 @@ Micro -> Macro
 - It requires significant effort to set up, but can be very beneficial in the long run
 
 ---
-
-
-
-
-
-## Steps
-
-```text
-cardescriptor/
-    features/
-        steps/
-            descriptor.py
-            openai.py
-            vehicle_service.py
-        environment.py
-        generate_vehicle_descriptions.feature
-```
-
-<!--
-- Many Languages possible
-- Independent from application language
--> just use python
--->
-
----
-
-```python
-# environment.py
-def before_all(context):
-    context.app = httpx.Client(base_url="http://localhost:8080")
-```
-
-
-<!--
-- context.app -> Session to not repeat the base_url
-
--->
