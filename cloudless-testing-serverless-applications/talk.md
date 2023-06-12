@@ -20,7 +20,7 @@ TODO: Slide about VM
 
 ---
 
-![bg](assets/cloud_toolbelt.png)
+![bg](assets/cloud-journey.png)
 
 <!--
 I want to give you two more tools for your tool belt in your cloud journey
@@ -31,16 +31,33 @@ I want to give you two more tools for your tool belt in your cloud journey
 ---
 
 > The hardest single part of building a software system is deciding precisely what to build.
-
-<p style="font-size: 75%; text-align:right">- Fred Brooks</p>
+<p style="font-size: 75%; text-align:right">- Frederick Brooks, 1987</p>
 
 <!--
-## Behavior-Driven Design
+https://www.cgl.ucsf.edu/Outreach/pc204/NoSilverBullet.html
 -->
 
-> The hardest single part of building a software system is deciding precisely what to build.
+---
 
-<p style="font-size: 75%; text-align:right">- Fred Brooks</p>
+> The hardest single part of building a software system is deciding precisely what to build.
+<p style="font-size: 75%; text-align:right">- Frederick Brooks, 1987</p>
+
+<br>
+
+> The second hardest part is keeping the documentation in sync.
+<p style="font-size: 75%; text-align:right">- me, now</p>
+
+---
+
+## Behavior-Driven Design
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+![bg](assets/serverless-mountains.png)
 
 ---
 
@@ -56,7 +73,7 @@ I want to give you two more tools for your tool belt in your cloud journey
 
 ---
 
-### Figure out what the software should do ...
+### Figure out what it should do ...
 
 - What features should the software have?
   - Features & Acceptance Criteria
@@ -86,7 +103,7 @@ Contracts (Swagger API)
 ### ... write it down ...
 
 ```gherkin
-# features/generate_vehicle_descriptions.feature
+# features/generate_vehicle_descriptions.feature (Gherkin)
 
 Feature: Generate Vehicle Descriptions
 
@@ -104,9 +121,9 @@ Feature: Generate Vehicle Descriptions
 <!--
 You and the PO go and discuss this with the customers, and the come up with this.
 
-- "Given" as past
-- "When" is present
-- "Then" as near future
+Cucumber is a tool that supports BDD
+It uses plain language specifications (Gherkin language) to define behavior
+This simplifies communication, facilitates collaboration and fosters a shared understanding.
 
 Respect the integrity of the step types: Givens set up initial state, Whens perform an action, and Thens verify outcomes. Don't arbitrarily reassign step types to make scenarios follow strict Given-When-Then ordering​1.
 -->
@@ -116,7 +133,7 @@ Respect the integrity of the step types: Givens set up initial state, Whens perf
 ### ... and automate it
 
 ```python
-# features/steps/steps.py
+# features/steps/steps.py (Python)
 
 @when("the user requests a description for this vehicle")
 def request_description(context)
@@ -315,5 +332,8 @@ Micro -> Macro
 - Cloudless testing allows for continuous testing independent of cloud resources
 - Tools like Docker Compose and WireMock help us create isolated testing environments and realistic mock responses
 - It requires significant effort to set up, but can be very beneficial in the long run
+
+
+No silver bullet
 
 ---
