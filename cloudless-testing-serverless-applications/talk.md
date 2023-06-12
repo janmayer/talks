@@ -2,6 +2,10 @@
 marp: true
 theme: uncover
 #class: invert
+style: |
+  .small-text {
+    font-size: 0.5rem;
+  }
 ---
 
 # Cloudless Testing of Serverless Applications
@@ -67,6 +71,12 @@ Contracts (Swagger API)
 - Defines how software will interact with other systems.
 - Can be thought of as the "language" that systems use to communicate with each other.
 -->
+
+---
+
+> The hardest single part of building a software system is deciding precisely what to build.
+
+<p style="font-size: 75%; text-align:right">- Fred Brooks</p>
 
 ---
 
