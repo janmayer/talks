@@ -1,0 +1,84 @@
+Bing Chat
+
+Jurgen Klopp in the style of the saviour Jesus Christ, white robe, cinematic style
+
+Aus <https://discord.com/channels/662267976984297473/1008571223543922809>
+
+https://marketplace.visualstudio.com/items?itemName=GitHub.copilot-labs
+
+Often it is easier to write the code instead of describing what needs to be done
+
+https://www.phind.com/
+
+https://poe.com/universal_link_page?displayName=Claude-instant
+
+This, but in a different way
+
+https://github.com/willwulfken/MidJourney-Styles-and-Keywords-Reference
+
+Plugins
+
+Automatec code reviews
+
+https://prompt.noonshot.com/
+
+Read github issues, automatically try to create fixes
+
+https://www.synthesia.io/post/ai-tools
+
+https://www.forbes.com/sites/bernardmarr/2023/02/28/beyond-chatgpt-14-mind-blowing-ai-tools-everyone-should-be-trying-out-now/
+
+https://www.unite.ai/best-ai-tools-for-business/
+
+Reduce skill gap
+
+ChatGPT is pretty amazing. I use it to learn and build my Django app. Is incredible how much information and definitions it can pack in a few sentences. It helped me understand how Nginx, Gunicorn, and Django should be deployed. All my JS, CSS, and HTML5 files are built with the help of ChatGPT. I don't need to google things out as often, moreover, I think I switch from 10 browser pages all at once, to about 5. That makes me extremely efficient. I doubled the amount of code I'm producing over the same period of time. ChatGPT is a big leap for our civilization. Even if is about 70% - 80% accurate, is our job to take care of the rest 20% - 30% isn't it? Let's see what wonders will this AI bring.
+
+Aus <https://www.youtube.com/watch?v=C_teb93alL4>
+
+The way I use ChatGPT for programming is to have it write a simple example of how to use a function or library for a specific task, and then use its answer as a reference, while also double checking things using documentation or Google.
+
+Aus <https://www.youtube.com/watch?v=C_teb93alL4>
+
+I am also a senior dev. I treat chatgpt as my very knowledgable assistant. It helps me going in the right direction. There have been many times where it pointed me to a library, or a specific method in a library or framework, which I forgot about or just hadn't used before. There have also been times when it somehow would get sort of lost and then I just resorted to googling :)
+
+Aus <https://www.youtube.com/watch?v=C_teb93alL4>
+
+https://docs.github.com/en/copilot/overview-of-github-copilot/about-github-copilot-for-individuals
+
+https://github.com/features/copilot/#pricing
+
+Refactor this code. Including some alternative for urllib, and strong typing with pydantic. Simplify the rest as much as possible
+
+https://www.happycoders.eu/de/software-craftsmanship/hexagonale-architektur/
+
+
+Tabnine Free
+	- https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode
+	- https://www.tabnine.com/pricing
+	- No Signup, just works, but limited
+
+Github Copilot
+	- https://marketplace.visualstudio.com/items?itemName=GitHub.copilot
+ -> Sign in with Github, needs Subscription 10$/Mo, 30day free trial,
+
+https://marketplace.visualstudio.com/items?itemName=Blackboxapp.blackbox
+
+Genie ChatGPT
+	- https://marketplace.visualstudio.com/items?itemName=genieai.chatgpt-vscode
+	- Unverified Extension (Japanese?)
+	- Free Starting Credits https://platform.openai.com/account/usage
+	- OpenAI API Key https://platform.openai.com/account/api-keys
+	- Explain, Optimize, Complete -> Just sends a limited query to Open AI
+
+
+Demo: Window.py, callindir.c
+
+Stable Diffusion
+DALL-E
+
+https://learn.microsoft.com/en-us/rest/api/servicebus/overview
+
+Google Cloud Code
+
+https://www.reddit.com/r/ValueInvesting/comments/135cx58/the_polish_stock_market_seems_undervalued/
