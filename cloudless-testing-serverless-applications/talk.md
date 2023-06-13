@@ -216,22 +216,21 @@ French Poetry 18th Century
 
 ---
 
-## Lets build it serverless
+## Azure Function
 
 ![height:400](assets/arch.png)
 
 ---
 
-### Build for Production
+### Code for Production
 
 - It should run in Production <!-- (The only thing everyone can agree on the only   thing anyone can agree on),  all tests is just to support this -->
   - no `if $test`
   - no changes to code to make it "testable"
 - should also run on
   - several other stages
-  - Continuous Integration Pipelines
-    - probably many PR in parallel
-  - Locally for developers
+  - Continuous Integration pipelines <!-- probably many PR in parallel -->
+  - locally for developers <!-- and do so fast! -->
 
 <!--
 - The only thing everyone can agree on the only thing anyone can agree on)
@@ -244,21 +243,22 @@ French Poetry 18th Century
 
 ---
 
-## Problems when testing
+### Problems when testing
 
-1. How to handle many parallel test runs?
-
-  - Continuous Integration Pipelines <!-- probably many PR in parallel -->
-  - Many developers <!-- should they all have their -->
-  - Each test run needs independent resources (especially databases & event distributors)
-
-2. How to test failure cases?
-  - Can't force real external services to fail
-  - Mock external systems <!-- Don't actually call external systems -->
+* Developer Experience
+  * needs to be *fast*
+* Parallel CI runs
+  * might compete for resources
+  * can't deploy every run to the cloud
+* External Systems
+  * Can't test failure cases with live systems
+  * Need mock external systems
 
 <!--
 TODO: Illustration
-
+  Don't actually call external systems
+  - Many developers should they all have their
+  - Each test run needs independent resources (especially databases & event distributors)
 - Each test run needs independent resources
 - (especially databases & event distributors)
 - Don't actually call external systems
@@ -274,26 +274,31 @@ TODO: Illustration
 
 ---
 
-### Run Azure Functions locally
+### Local Development
 
-TODO: Live Demo
-
----
-
-### Docker Compose
-
-- also a good way into serverless for K8S-ler
+- Docker Compose Environment
+- Azure Functions Docker
+- Wiremock for everything http related
 
 ---
 
-### Wiremock
+### Local Replacements
 
----
+<style scoped>table {font-size: 75%;}</style>
 
-## Recap
+| Azure                          | Docker   |
+| -----------------------------: | :------- |
+| AD, Key Vault, Management, ... | Wiremock |
+| Storage Account                | Azurite  |
+| Cosmos DB                      | Cosmos DB Emulator,<br>cosmosdb-server |
+| Event Grid                     | azureeventgridsimulator   |
+| Event Hub                      | ?, (Kafka) |
+| Service Bus                    | ?, (RabbitMQ) |
 
--
-- It's all http? Always has been. Wiremock
+<!--
+https://jimmybogard.com/local-development-with-azure-service-bus/
+https://feedback.azure.com/d365community/idea/39679808-7626-ec11-b6e6-000d3a4f032c
+-->
 
 ---
 
@@ -315,27 +320,19 @@ Delete Something and see what breaks
 Unit Test -> Concrete
 Outside Harder, Inside Softer
 
+<!--
+No silver bullet
+-->
 
 ---
 
-VENN
+## Key Takeaways
 
-Unittests : Behaviourtests : "Integration"tests : E2E tests
-
-
-Micro -> Macro
-
-
----
-
-# Key Takeaways
-
-- BDD: You are doing it anyway - just write it down
+- BDD: You are doing it anyway
 - Cloudless testing allows for continuous testing independent of cloud resources
-- Tools like Docker Compose and WireMock help us create isolated testing environments and realistic mock responses
+- Tools like Docker Compose and Wiremock help us create isolated testing environments and realistic mock responses
 - It requires significant effort to set up, but can be very beneficial in the long run
 
-
-No silver bullet
-
----
+<!--
+- also a good way into serverless for K8S-ler
+-->
