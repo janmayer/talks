@@ -1,6 +1,8 @@
 {
     "markdown.marp.enableHtml": true,
     "cSpell.words": [
-        "templating"
+        "marp",
+        "templating",
+        "Valtech"
     ]
 }

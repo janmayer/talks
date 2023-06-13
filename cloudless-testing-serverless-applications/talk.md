@@ -1,11 +1,6 @@
 ---
 marp: true
 theme: uncover
-#class: invert
-style: |
-  .small-text {
-    font-size: 0.5rem;
-  }
 ---
 
 # Cloudless Testing of Serverless Applications
@@ -23,9 +18,9 @@ TODO: Slide about VM
 ![bg](assets/cloud-journey.png)
 
 <!--
-I want to give you two more tools for your tool belt in your cloud journey
-- Behavior
-- Cloudless
+My goal is to give you more tools you can put in your backpack
+and at some point in your cloud journey you can pull them out
+and say: Yep, that is the right tool for this.
 -->
 
 ---
@@ -35,6 +30,10 @@ I want to give you two more tools for your tool belt in your cloud journey
 
 <!--
 https://www.cgl.ucsf.edu/Outreach/pc204/NoSilverBullet.html
+
+Some of you might know this quote:
+The hardest single part of building a software system is deciding precisely what to build.
+Its from 1987 - so that problem has been known for longer than I am alive.
 -->
 
 ---
@@ -44,20 +43,53 @@ https://www.cgl.ucsf.edu/Outreach/pc204/NoSilverBullet.html
 
 <br>
 
-> The second hardest part is keeping the documentation in sync.
+> The second hardest part is keeping the documentation in sync with reality.
 <p style="font-size: 75%; text-align:right">- me, now</p>
+
+<!--
+And to that I might jokingly add:
+he second hardest part is keeping the documentation in sync.
+-->
 
 ---
 
 ## Behavior-Driven Design
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
 
-![bg](assets/serverless-mountains.png)
+You are already doing it
+
+<!--
+The first step in any software development project is to define the behavior.
+-->
+
+---
+
+### Behavior?
+
+* **Who** & **Why**: User Experience
+* **How**: Contracts (Boundaries, Interfaces)
+* **What**: Features (Acceptance Criteria)
+
+<!--
+User Experience
+- The "Why" - Why the system is being developed, ensuring that the software is meaningful and valuable to the users.
+- The "Who" - Who the users of the system are, designing the system with a focus on the user's needs, expectations, and context.
+- Furthermore, UX is about:
+  - Usability - Ensuring the system is easy to use and intuitive
+  - Accessibility - Making sure the system can be used by people with varying abilities
+  - Satisfaction - Providing a positive and fulfilling user experience
+  - Aesthetics - Creating a visually pleasing and engaging user interface
+  - Performance - Guaranteeing the system responds swiftly to user interactions
+
+Contracts (Swagger API)
+- The "how" of interaction between software components
+- Defines how software will interact with other systems.
+- Can be thought of as the "language" that systems use to communicate with each other.
+
+Features & Acceptance Criteria
+- The "what" of the software - what should it do?
+- Defined by project stakeholders and developers together.
+- Drives the development process and provides a clear goal to aim for.
+-->
 
 ---
 
@@ -66,41 +98,15 @@ https://www.cgl.ucsf.edu/Outreach/pc204/NoSilverBullet.html
 > We need a detailed description for individual cars <br> to display on the frontend and in our PDFs for vendors. The cars are highly customizable, so we every description will be different.
 
 <!--
-- Made up Example
+- Let's consider an Example I made up for this talk
 - Customer heard about AI
 - Super Hot new thing
+...
 -->
 
 ---
 
-### Figure out what it should do ...
-
-- What features should the software have?
-  - Features & Acceptance Criteria
-- How should the software interact with other systems?
-  - Contracts (Swagger API)
-- What should the user experience look like?
-
-<!--
-The first step in any software development project is to define the behavior.
-- I can see it in your heads that you are thinking about it.
-- A lot of time is spend figuring out what exactly is it that the end result should do
-- You are thinking about those anyway - write them down
-
-Features & Acceptance Criteria
-- The "what" of the software - what should it do?
-- Defined by project stakeholders and developers together.
-- Drives the development process and provides a clear goal to aim for.
-
-Contracts (Swagger API)
-- The "how" of interaction between software components
-- Defines how software will interact with other systems.
-- Can be thought of as the "language" that systems use to communicate with each other.
--->
-
----
-
-### ... write it down ...
+### Formalize Features ...
 
 ```gherkin
 # features/generate_vehicle_descriptions.feature (Gherkin)
@@ -130,7 +136,7 @@ Respect the integrity of the step types: Givens set up initial state, Whens perf
 
 ---
 
-### ... and automate it
+### ... and automate
 
 ```python
 # features/steps/steps.py (Python)
@@ -156,47 +162,47 @@ Notice "Description" is not well defined
 
 ---
 
-![height:500](assets/single-source-of-truth-256x256.png)
+### Benefits
 
-<https://cucumber.io/docs/>
+* Collaboration
+* Clarity
+* Testability
+* Documentation
+
+<p style="font-size: 50%; margin-top:30px">https://cucumber.io/docs/</p>
+
+![bg right height:450](assets/single-source-of-truth-256x256.png)
 
 <!--
-Stakeholders, Product Owners (POs), and Project Managers (PMs) love Gherkin Feature Tests
+- Collaboration: Fosters improved interaction between team members, leading to better understanding and knowledge sharing.
+  - Stakeholders, Product Owners (POs), and Project Managers (PMs) love
+- Clarity: Reduces misunderstandings and promotes clearer expectations before coding, focusing on what the system should do, not how.
+- Testability: Ensures system behavior can be automatically tested and verified, regardless of the underlying implementation.
+- Documentation: Provides up-to-date, executable, and implementation-agnostic specifications.
 
-- Stakeholders love it
-- Happy Cases & Unhappy Cases
-
-### Behavior-Driven Design (BDD)
-
-- Methodology for developing software based on its expected behavior
-- Starts with a clear understanding of behavior and works backward to implement it
-- Encourages collaboration between tech and non-tech stakeholders
-
-BDD is a way for software teams to work that closes the gap between business people and technical people by:
-
-- Encouraging collaboration across roles to build shared understanding of the problem to be solved
-- Working in rapid, small iterations to increase feedback and the flow of value
-- Producing system documentation that is automatically checked against the system’s behaviour
-
+Enhances communication: Promotes shared understanding among roles.
+Reduces misunderstandings: Clarifies expectations before coding.
+Minimizes rework: Uncovers issues early, saving time and resources.
+Improves documentation: Provides up-to-date, executable specifications.
+Facilitates testing: Promotes test-driven approach, catching issues early.
+Ensures business-value focus: Encourages building features that matter to users.
+Boosts collaboration: Fosters team-wide engagement and knowledge sharing.
 -->
 
 ---
 
-### Feature Tests Best Practices
+### My Recommendations
 
-1. Part of your codebase (can be refactored!) <!-- e.g. unify steps definitions -->
-2. Should be readable <!-- strength is crossing from business to tech, use business terms, some technical details are ok -->
-3. Behavior, not Procedures <!-- less like imperative tests, declarative rather than imperative ​-->
-4. One Scenario, One Behavior
-5. Hide irrelevant details  <!-- for that Behavior, especially when setting up given steps -->
+* Part of your codebase (can be refactored!) <!-- e.g. unify steps definitions -->
+* Not an exact science
+  * Write behavior, not procedures <!-- less like imperative tests, declarative rather than imperative ​-->
+  * Hide irrelevant details, but not too much <!-- for that Behavior, especially when setting up given steps -->
+  * Consider Shortcuts <!-- write directly to the database -->
+* If need tests for your tests, you have gone too far
 
----
-
-### Automation Steps Best Practices
-
-1. Try not to lie in your steps
-2. You can take shortcuts in steps <!-- write directly to the database -->
-3. If you think you need tests for your tests, <br> you have gone too far
+<!--
+French Poetry 18th Century
+-->
 
 ---
 
@@ -207,10 +213,6 @@ BDD is a way for software teams to work that closes the gap between business peo
 <!--
 - So far, completely technology agnostic
 -->
-
----
-System Agnostic
-Language Agnostic
 
 ---
 
