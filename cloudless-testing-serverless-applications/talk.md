@@ -5,8 +5,6 @@ theme: uncover
 
 # Cloudless Testing of Serverless Applications
 
----
-
 TODO: Jan Mayer
 
 ---
