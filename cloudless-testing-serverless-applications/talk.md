@@ -228,13 +228,13 @@ French Poetry 18th Century
 
 ### Building for Production
 
-- It should run in Production <!-- (The only thing everyone can agree on the only   thing anyone can agree on),  all tests is just to support this -->
-  - No `if $test`
-  - No changes to code to make it "testable"
-- Should also run on
-  - Several other stages
-  - Continuous Integration pipelines <!-- probably many PR in parallel -->
-  - Locally for developers <!-- and do so fast! -->
+* It should run in Production <!-- (The only thing everyone can agree on the only   thing anyone can agree on),  all tests is just to support this -->
+  * No `if $test`
+  * No changes to code to make it "testable"
+* Should also run on
+  * Several other stages
+  * Continuous Integration pipelines <!-- probably many PR in parallel -->
+  * Locally for developers <!-- and do so fast! -->
 
 <!--
 - The only thing everyone can agree on the only thing anyone can agree on)
