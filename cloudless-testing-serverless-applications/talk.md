@@ -274,11 +274,17 @@ TODO: Illustration
 
 ---
 
+### Local Development Demo
+
+<!--
 ### Local Development
 
-- Docker Compose Environment
-- Azure Functions Docker
-- Wiremock for everything http related
+- Docker Compose
+- Azure Functions Container
+- Wiremock for everything http
+
+![bg right height:300](assets/arch.png)
+-->
 
 ---
 
@@ -288,9 +294,10 @@ TODO: Illustration
 
 | Azure                          | Docker   |
 | -----------------------------: | :------- |
+| Function App                   | azure-functions (Official)
 | AD, Key Vault, Management, ... | Wiremock |
-| Storage Account                | Azurite  |
-| Cosmos DB                      | Cosmos DB Emulator,<br>cosmosdb-server |
+| Storage Account                | Azurite (Official)  |
+| Cosmos DB                      | Cosmos DB Emulator (Official), cosmosdb-server |
 | Event Grid                     | azureeventgridsimulator   |
 | Event Hub                      | ?, (Kafka) |
 | Service Bus                    | ?, (RabbitMQ) |
@@ -302,37 +309,42 @@ https://feedback.azure.com/d365community/idea/39679808-7626-ec11-b6e6-000d3a4f03
 
 ---
 
-## Is this even a good Idea?
+### Not covered
 
-Understand why you are doing something
-
-- A lot of work
-- ... ensures continuous testing
-- ... language and infrastructure agnostic
-    - supports transition from and to other systems
-- ... you know better what your code does
-    - but do you want to know that?
-- ... allows for the ultimate flex when refactoring
-
-Ideally 100% coverage (for real this time)
-Delete Something and see what breaks
-
-Unit Test -> Concrete
-Outside Harder, Inside Softer
-
-<!--
-No silver bullet
--->
+* Integration with real services
+  * E2E Happy Cases
+  * Health monitoring
+* Anything load related
 
 ---
 
-## Key Takeaways
+## BDD + Cloudless = ❤️
+
+* BDD: You are doing it anyway
+  * language and infrastructure agnostic
+  * ultimate flexibility when refactoring
+* Cloudless test environments
+  * fast iteration locally
+  * better CI Pipelines
+
+<!--
+Ideally 100% coverage (for real this time)
+Delete Something and see what breaks
+* supports transition from and to other systems
+* you know better what your code does
+
+Unit Test -> Concrete
+Outside Harder, Inside Softer
+No silver bullet
+-->
+
+<!--
+---
 
 - BDD: You are doing it anyway
 - Cloudless testing allows for continuous testing independent of cloud resources
 - Tools like Docker Compose and Wiremock help us create isolated testing environments and realistic mock responses
 - It requires significant effort to set up, but can be very beneficial in the long run
 
-<!--
 - also a good way into serverless for K8S-ler
 -->
