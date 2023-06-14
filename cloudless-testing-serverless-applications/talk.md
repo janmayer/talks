@@ -71,14 +71,8 @@ The first step in any software development project is to define the behavior.
 
 <!--
 User Experience
-- The "Why" - Why the system is being developed, ensuring that the software is meaningful and valuable to the users.
 - The "Who" - Who the users of the system are, designing the system with a focus on the user's needs, expectations, and context.
-- Furthermore, UX is about:
-  - Usability - Ensuring the system is easy to use and intuitive
-  - Accessibility - Making sure the system can be used by people with varying abilities
-  - Satisfaction - Providing a positive and fulfilling user experience
-  - Aesthetics - Creating a visually pleasing and engaging user interface
-  - Performance - Guaranteeing the system responds swiftly to user interactions
+- The "Why" - Why the system is being developed, ensuring that the software is meaningful and valuable to the users.
 
 Contracts (Swagger API)
 - The "how" of interaction between software components
@@ -121,7 +115,7 @@ Feature: Generate Vehicle Descriptions
         Given details about a specific vehicle are available
         And the AI description generator is functional
         When the user requests a description for this vehicle
-        Then the Description Service provides a description for that vehicle
+        Then the Description Service provides a description for this vehicle
 ```
 
 <!--
@@ -131,7 +125,9 @@ Cucumber is a tool that supports BDD
 It uses plain language specifications (Gherkin language) to define behavior
 This simplifies communication, facilitates collaboration and fosters a shared understanding.
 
-Respect the integrity of the step types: Givens set up initial state, Whens perform an action, and Thens verify outcomes. Don't arbitrarily reassign step types to make scenarios follow strict Given-When-Then ordering​1.
+- Given: The initial context or preconditions required for the scenario to be valid. It sets up the starting point for the behavior being described.
+- When (only 1x): The specific action or event that triggers the behavior. It represents the stimulus or input that leads to the expected outcome.
+- Then: The expected outcome or behavior that should result from the given context and action. It represents the observable results or state changes in the system.
 -->
 
 ---
@@ -147,7 +143,7 @@ def request_description(context)
         f"http://localhost:8080/vehicles/{context.vin}/description"
     )
 
-@then("the Description Service provides a description for that vehicle")
+@then("the Description Service provides a description for this vehicle")
 def ensure_description(context)
     assert context.response.status_code == 200
     assert context.response.json()["vin"] == context.vin
@@ -155,11 +151,17 @@ def ensure_description(context)
 ```
 
 <!--
-From the outside in
+Steps are what translates the plain text to actual code
 
-Ideally, also test against the swagger
+-> From the outside in
+Here,
+- user requests means "GET"
+- and vehicle means with a VIN
 
-Notice "Description" is not well defined
+provides a description means
+- ...
+- Ideally, also test against the swagger
+- Notice "Description" is not well defined
 -->
 
 ---
@@ -177,34 +179,44 @@ Notice "Description" is not well defined
 
 
 <!--
-- Collaboration: Fosters improved interaction between team members, leading to better understanding and knowledge sharing.
-  - Stakeholders, Product Owners (POs), and Project Managers (PMs) love
-- Clarity: Reduces misunderstandings and promotes clearer expectations before coding, focusing on what the system should do, not how.
-- Testability: Ensures system behavior can be automatically tested and verified, regardless of the underlying implementation.
-- Documentation: Provides up-to-date, executable, and implementation-agnostic specifications.
+Collaboration:
+  - Enhances communication: Promotes shared understanding among roles.
+  - Stakeholders, Product Owners (POs), and Project Managers (PMs) love this
+  - Better understanding and knowledge sharing
 
-Enhances communication: Promotes shared understanding among roles.
-Reduces misunderstandings: Clarifies expectations before coding.
-Minimizes rework: Uncovers issues early, saving time and resources.
-Improves documentation: Provides up-to-date, executable specifications.
-Facilitates testing: Promotes test-driven approach, catching issues early.
-Ensures business-value focus: Encourages building features that matter to users.
-Boosts collaboration: Fosters team-wide engagement and knowledge sharing.
+Clarity:
+  - Reduces misunderstandings and promotes clearer expectations before coding
+  - focus on what the system should do, not how
+  - Ensures business-value focus: Encourages building features that matter to users.
+
+Testability:
+  - Ensures system behavior can be automatically tested and verified,
+  - regardless of the underlying implementation.
+
+Documentation:
+  - Provides up-to-date, executable, and implementation-agnostic specifications.
 -->
 
 ---
 
 ### Recommendations
 
-* Part of your codebase (can be refactored!) <!-- e.g. unify steps definitions -->
+* Part of your codebase (can be refactored!)
 * Not an exact science
-  * Write behavior, not procedures <!-- less like imperative tests, declarative rather than imperative ​-->
-  * Hide irrelevant details, but not too much <!-- for that Behavior, especially when setting up given steps -->
-  * Consider Shortcuts <!-- write directly to the database -->
+  * Write behavior, not procedures
+  * Hide irrelevant details, but not too much
+  * Consider Shortcuts
 * If need tests for your tests, you have gone too far
 
 <!--
+- Refactor when knowledge about your system increases
+
 French Poetry 18th Century
+- less like imperative tests, declarative rather than imperative
+- hide for that Behavior, keep some technical details
+- consider write directly to the database
+
+...
 -->
 
 ---
@@ -219,7 +231,7 @@ French Poetry 18th Century
 
 ---
 
-## Azure Function
+## Implementation on Azure
 
 ![height:400](assets/arch.png)
 
@@ -227,21 +239,26 @@ French Poetry 18th Century
 
 ### Building for Production
 
-* It should run in Production <!-- (The only thing everyone can agree on the only   thing anyone can agree on),  all tests is just to support this -->
+* It should run in Production
   * No `if $test`
   * No changes to code to make it "testable"
 * Should also run on
   * Several other stages
-  * Continuous Integration pipelines <!-- probably many PR in parallel -->
-  * Locally for developers <!-- and do so fast! -->
+  * Parallel Continuous Integration pipelines
+  * Locally for developers
 
 <!--
-- The only thing everyone can agree on the only thing anyone can agree on)
-- all tests are just to support this
-<!--
+Production
+- only thing everyone can agree on the only thing anyone can agree on
+- all tests is just to support this
+
+...
+
 - Likely several other stages
   - preprod/staging/tui
   - dev
+
+- probably many PR in parallel
 -->
 
 ---

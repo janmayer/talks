@@ -71,3 +71,13 @@ No silver bullet
 - It requires significant effort to set up, but can be very beneficial in the long run
 
 - also a good way into serverless for K8S-ler
+
+---
+
+- Furthermore, UX is about:
+  - Usability - Ensuring the system is easy to use and intuitive
+  - Accessibility - Making sure the system can be used by people with varying abilities
+  - Satisfaction - Providing a positive and fulfilling user experience
+  - Aesthetics - Creating a visually pleasing and engaging user interface
+  - Performance - Guaranteeing the system responds swiftly to user interactions
+
