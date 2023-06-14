@@ -171,9 +171,10 @@ Notice "Description" is not well defined
 * Testability
 * Documentation
 
-<p style="font-size: 50%; margin-top:30px">https://cucumber.io/docs/</p>
-
 ![bg right:38.2% height:450](assets/single-source-of-truth-256x256.png)
+
+<p style="font-size: 50%; bottom:50px; right:0px; position:absolute">https://cucumber.io/docs/</p>
+
 
 <!--
 - Collaboration: Fosters improved interaction between team members, leading to better understanding and knowledge sharing.
