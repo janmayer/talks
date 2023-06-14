@@ -5,6 +5,8 @@ theme: uncover
 
 # Cloudless Testing of Serverless Applications
 
+---
+
 TODO: Jan Mayer
 
 ---
@@ -53,7 +55,7 @@ he second hardest part is keeping the documentation in sync.
 
 ---
 
-## Behavior-Driven Design
+## Behavior-Driven Development
 
 You are already doing it
 
@@ -155,6 +157,8 @@ def ensure_description(context)
 ```
 
 <!--
+From the outside in
+
 Ideally, also test against the swagger
 
 Notice "Description" is not well defined
@@ -171,7 +175,7 @@ Notice "Description" is not well defined
 
 <p style="font-size: 50%; margin-top:30px">https://cucumber.io/docs/</p>
 
-![bg right height:450](assets/single-source-of-truth-256x256.png)
+![bg right:38.2% height:450](assets/single-source-of-truth-256x256.png)
 
 <!--
 - Collaboration: Fosters improved interaction between team members, leading to better understanding and knowledge sharing.
@@ -191,7 +195,7 @@ Boosts collaboration: Fosters team-wide engagement and knowledge sharing.
 
 ---
 
-### My Recommendations
+### Recommendations
 
 * Part of your codebase (can be refactored!) <!-- e.g. unify steps definitions -->
 * Not an exact science
@@ -222,15 +226,15 @@ French Poetry 18th Century
 
 ---
 
-### Code for Production
+### Building for Production
 
 - It should run in Production <!-- (The only thing everyone can agree on the only   thing anyone can agree on),  all tests is just to support this -->
-  - no `if $test`
-  - no changes to code to make it "testable"
-- should also run on
-  - several other stages
+  - No `if $test`
+  - No changes to code to make it "testable"
+- Should also run on
+  - Several other stages
   - Continuous Integration pipelines <!-- probably many PR in parallel -->
-  - locally for developers <!-- and do so fast! -->
+  - Locally for developers <!-- and do so fast! -->
 
 <!--
 - The only thing everyone can agree on the only thing anyone can agree on)
@@ -246,15 +250,15 @@ French Poetry 18th Century
 ### Problems when testing
 
 * Developer Experience
-  * needs to be *fast*
+  * Needs to be *fast*
 * Parallel CI runs
-  * might compete for resources
-  * can't deploy every run to the cloud
+  * Might compete for resources
+  * Can't deploy every run to the cloud
 * External Systems
   * Can't test failure cases with live systems
-  * Need mock external systems
 
 <!--
+  * Need mock external systems
 TODO: Illustration
   Don't actually call external systems
   - Many developers should they all have their
@@ -263,7 +267,6 @@ TODO: Illustration
 - (especially databases & event distributors)
 - Don't actually call external systems
 - Mock external systems
-
 -->
 
 ---
@@ -309,42 +312,28 @@ https://feedback.azure.com/d365community/idea/39679808-7626-ec11-b6e6-000d3a4f03
 
 ---
 
-### Not covered
+### No Silver Bullet
 
-* Integration with real services
+* Infrastructure & Security
+  * Deploy to dev
+  * Test Suite for Security
+* Integration
   * E2E Happy Cases
-  * Health monitoring
-* Anything load related
+  * Health Monitoring
+* Performance
+  * Load Testing
+
+![bg right:38.2%](assets/cloud-toolbelt.png)
 
 ---
 
-## BDD + Cloudless = ❤️
+### BDD + Cloudless = ❤️
 
 * BDD: You are doing it anyway
-  * language and infrastructure agnostic
-  * ultimate flexibility when refactoring
+  * Language & infrastructure agnostic
+  * Ultimate flexibility when refactoring
 * Cloudless test environments
-  * fast iteration locally
-  * better CI Pipelines
+  * Fast iteration locally
+  * Better CI Pipelines
 
-<!--
-Ideally 100% coverage (for real this time)
-Delete Something and see what breaks
-* supports transition from and to other systems
-* you know better what your code does
-
-Unit Test -> Concrete
-Outside Harder, Inside Softer
-No silver bullet
--->
-
-<!--
----
-
-- BDD: You are doing it anyway
-- Cloudless testing allows for continuous testing independent of cloud resources
-- Tools like Docker Compose and Wiremock help us create isolated testing environments and realistic mock responses
-- It requires significant effort to set up, but can be very beneficial in the long run
-
-- also a good way into serverless for K8S-ler
--->
+![bg right:38.2%](assets/cloud-toolbelt.png)
