@@ -321,7 +321,7 @@ https://feedback.azure.com/d365community/idea/39679808-7626-ec11-b6e6-000d3a4f03
 * Performance
   * Load Testing
 
-![bg right:38.2%](assets/cloud-toolbelt.png)
+![bg right:38.2%](assets/computer-clouds-tools.png)
 
 ---
 
