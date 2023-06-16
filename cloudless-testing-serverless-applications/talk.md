@@ -9,11 +9,13 @@ TODO: Jan Mayer
 
 ---
 
+<!--
 ## Valtech Mobility
 
 TODO: Slide about VM
 
 ---
+-->
 
 ![bg](assets/cloud-journey.png)
 
