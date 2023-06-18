@@ -27,7 +27,7 @@ style: |
 
 # Cloudless Testing of Serverless Applications
 
-### Jan Mayer
+### Dr. Jan Mayer
 
 [jan.mayer@valtech-mobility.com](mailto:jan.mayer@valtech-mobility.com)
 
@@ -37,9 +37,11 @@ style: |
 
 ---
 
-## Valtech Mobility
+![bg](assets/Folie4.png)
 
-TODO: Slide about VM
+---
+
+![bg](assets/Folie5.png)
 
 ---
 
