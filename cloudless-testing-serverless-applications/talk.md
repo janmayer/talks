@@ -1,21 +1,41 @@
 ---
 marp: true
 theme: uncover
+style: |
+  .icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-size: cover;
+    vertical-align: middle;
+  }
+
+  .icon-linkedin {
+    background-image: url('assets/linkedin.svg');
+    margin-top: -10px;
+  }
+
+  .icon-github {
+    background-image: url('assets/github.svg');
+    margin-top: -10px;
+  }
 ---
 
 # Cloudless Testing of Serverless Applications
 
-TODO: Jan Mayer
+### Jan Mayer
+
+- <i class="icon icon-github"></i> [janmayer](https://github.com/janmayer)
+- <i class="icon icon-linkedin"></i> [dr-jan-mayer](https://www.linkedin.com/in/dr-jan-mayer/)
 
 ---
 
-<!--
 ## Valtech Mobility
 
 TODO: Slide about VM
 
 ---
--->
+
 
 ![bg](assets/cloud-journey.png)
 
@@ -91,7 +111,8 @@ Features & Acceptance Criteria
 
 ### New requirement: <br> Car Descriptions
 
-> We need a detailed description for individual cars <br> to display on the frontend and in our PDFs for vendors. The cars are highly customizable, so we every description will be different.
+> We need a detailed description for individual cars <br> to display on the frontend and in our PDFs for vendors. The cars are highly customizable, so
+every description will be different.
 
 <!--
 - Let's consider an Example I made up for this talk
@@ -113,7 +134,7 @@ Feature: Generate Vehicle Descriptions
     I want to generate descriptions for vehicles
     So that I can provide comprehensive information to customers.
 
-    Scenario: Generate Description for Known Vehicle
+    Scenario: Generate description for known vehicle
         Given details about a specific vehicle are available
         And the AI description generator is functional
         When the user requests a description for this vehicle
@@ -140,13 +161,13 @@ This simplifies communication, facilitates collaboration and fosters a shared un
 # features/steps/steps.py (Python)
 
 @when("the user requests a description for this vehicle")
-def request_description(context)
+def request_description(context):
     context.response = requests.get(
         f"http://localhost:8080/vehicles/{context.vin}/description"
     )
 
 @then("the Description Service provides a description for this vehicle")
-def ensure_description(context)
+def ensure_description(context):
     assert context.response.status_code == 200
     assert context.response.json()["vin"] == context.vin
     assert context.response.json()["description"]
