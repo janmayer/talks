@@ -299,7 +299,7 @@ Production
 
 * Developer Experience
   * Needs to be *fast*
-* Parallel CI runs
+* Parallel Continuous Integration runs
   * Might compete for resources
   * Can't deploy every run to the cloud
 * External Systems
