@@ -19,14 +19,22 @@ style: |
     background-image: url('assets/github.svg');
     margin-top: -10px;
   }
+
+  h1 {
+    font-size: 170%;
+  }
 ---
 
 # Cloudless Testing of Serverless Applications
 
+
 ### Jan Mayer
 
-- <i class="icon icon-github"></i> [janmayer](https://github.com/janmayer)
-- <i class="icon icon-linkedin"></i> [dr-jan-mayer](https://www.linkedin.com/in/dr-jan-mayer/)
+[jan.mayer@valtech-mobility.com](mailto:jan.mayer@valtech-mobility.com)
+
+<i class="icon icon-github"></i> [janmayer](https://github.com/janmayer) | <i class="icon icon-linkedin"></i> [dr-jan-mayer](https://www.linkedin.com/in/dr-jan-mayer/)
+
+![bg left:25%](assets/jan-mayer-bg.svg)
 
 ---
 
