@@ -27,7 +27,6 @@ style: |
 
 # Cloudless Testing of Serverless Applications
 
-
 ### Jan Mayer
 
 [jan.mayer@valtech-mobility.com](mailto:jan.mayer@valtech-mobility.com)
