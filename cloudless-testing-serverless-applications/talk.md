@@ -39,9 +39,23 @@ style: |
 
 ![bg](assets/Folie4.png)
 
+<!--
+- Valtech Mobility provides IT and Data Science Services in the Automotive Industry
+- 550 developers mostly in Germany and China
+- for example Provide Backend Services for 21m Vehicles
+-->
+
+
 ---
 
 ![bg](assets/Folie5.png)
+
+<!--
+- Clients from the Volkswagen Group
+  - Cariad
+  - Brands like Audi, Porsche, etc
+- Also Toyota, Airbus, etc.
+-->
 
 ---
 
@@ -86,7 +100,7 @@ he second hardest part is keeping the documentation in sync.
 
 ## Behavior-Driven Development
 
-You are already doing it
+You are already doing it.
 
 <!--
 The first step in any software development project is to define the behavior.
@@ -147,7 +161,7 @@ Feature: Generate Vehicle Descriptions
         Given details about a specific vehicle are available
         And the AI description generator is functional
         When the user requests a description for this vehicle
-        Then the Description Service provides a description for this vehicle
+        Then a description for this vehicle is provided
 ```
 
 <!--
@@ -175,7 +189,7 @@ def request_description(context):
         f"http://localhost:8080/vehicles/{context.vin}/description"
     )
 
-@then("the Description Service provides a description for this vehicle")
+@then("a description for this vehicle is provided")
 def ensure_description(context):
     assert context.response.status_code == 200
     assert context.response.json()["vin"] == context.vin
@@ -235,9 +249,9 @@ Documentation:
 
 * Part of your codebase (can be refactored!)
 * Not an exact science
-  * Write behavior, not procedures
-  * Hide irrelevant details, but not too much
-  * Consider Shortcuts
+  * Strive for symmetry
+  * Hide irrelevant details
+  * Consider shortcuts
 * If need tests for your tests, you have gone too far
 
 <!--
@@ -246,7 +260,7 @@ Documentation:
 French Poetry 18th Century
 - less like imperative tests, declarative rather than imperative
 - hide for that Behavior, keep some technical details
-- consider write directly to the database
+- consider writing directly to the database
 
 ...
 -->
@@ -276,7 +290,7 @@ French Poetry 18th Century
   * No changes to code to make it "testable"
 * Should also run on
   * Several other stages
-  * Parallel Continuous Integration pipelines
+  * Continuous Integration pipelines
   * Locally for developers
 
 <!--
@@ -295,13 +309,13 @@ Production
 
 ---
 
-### Problems when testing
+### Problems when Testing
 
 * Developer Experience
   * Needs to be *fast*
-* Parallel Continuous Integration runs
+* Continuous Integration
   * Might compete for resources
-  * Can't deploy every run to the cloud
+  * Deploy every run to the cloud !?
 * External Systems
   * Can't test failure cases with live systems
 
@@ -319,7 +333,7 @@ TODO: Illustration
 
 ---
 
-## Cloudless?
+## Cloudless
 
 ![bg](assets/cloudless.png)
 
@@ -363,10 +377,10 @@ https://feedback.azure.com/d365community/idea/39679808-7626-ec11-b6e6-000d3a4f03
 ### No Silver Bullet
 
 * Infrastructure & Security
-  * Deploy to dev
+  * Deploy to Dev
   * Test Suite for Security
 * Integration
-  * E2E Happy Cases
+  * (E2E) Happy Cases
   * Health Monitoring
 * Performance
   * Load Testing
@@ -377,11 +391,11 @@ https://feedback.azure.com/d365community/idea/39679808-7626-ec11-b6e6-000d3a4f03
 
 ### BDD + Cloudless = ❤️
 
-* BDD: You are doing it anyway
+* You are already doing BDD
   * Language & infrastructure agnostic
   * Ultimate flexibility when refactoring
-* Cloudless test environments
+* Cloudless environments
   * Fast iteration locally
-  * Better CI Pipelines
+  * Better CI pipelines
 
 ![bg right:38.2%](assets/cloud-toolbelt.png)
