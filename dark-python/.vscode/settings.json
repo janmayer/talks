@@ -1,4 +1,5 @@
 {
+    "markdown.marp.enableHtml": true,
     "cSpell.words": [
         "dawg",
         "myfun",
