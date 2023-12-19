@@ -1,6 +1,7 @@
 ---
 marp: true
 theme: uncover
+#class: invert
 style: |
   .icon {
     display: inline-block;
@@ -36,29 +37,6 @@ style: |
 ![bg left:25%](assets/jan-mayer-bg.svg)
 
 ---
-
-![bg](assets/Folie4.png)
-
-<!--
-- Valtech Mobility provides IT and Data Science Services in the Automotive Industry
-- 550 developers mostly in Germany and China
-- for example Provide Backend Services for 21m Vehicles
--->
-
-
----
-
-![bg](assets/Folie5.png)
-
-<!--
-- Clients from the Volkswagen Group
-  - Cariad
-  - Brands like Audi, Porsche, etc
-- Also Toyota, Airbus, etc.
--->
-
----
-
 
 ![bg](assets/cloud-journey.png)
 
