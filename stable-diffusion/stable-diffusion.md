@@ -4,11 +4,11 @@ theme: uncover
 class: invert
 ---
 
+## A not-too-deep dive into image creation with
+
 # Stable Diffusion
 
-## Down the Rabbit Hole
-
-Jan Mayer, 02.02.2024
+Jan Mayer, 26.04.2024
 
 ---
 
@@ -50,42 +50,106 @@ Diffusion models are taught to remove noise from an image.
 
 ## Generation
 
-- Begin with a **random noise input**
+- Begin with random **noise** as input
 - Reverse Diffusion (Denoising):
   - **Iteratively** applies the learned reverse process to the initial noise
   - At each step, the model predicts and subtracts the added noise, gradually denoising the data.
 - **conditioned** on text descriptions
-- (plus additional magic)
 
 Note: Deterministic with same settings + seed!
 
 ---
 
-## Example: Fooocus Advanced
+## Releases
 
-[Juggernaut XL](https://civitai.com/models/133005?modelVersionId=288982) + [Bricks Style LoRA](https://civitai.com/models/274576/bricks-style-sdxl) + [Fried Egg Style LoRA](https://civitai.com/models/255828/fried-egg-style-lora-15sdxl)
+| [Family](https://medium.com/@promptingpixels/comparing-stable-diffusion-models-2c1dc9919ab7)     | Release | Resolution |   |
+|-----------:|--------:|------------| - |
+| SD <1.5    | ~2022   |            | obsolete |
+| [**SD 1.5**](https://huggingface.co/runwayml/stable-diffusion-v1-5) | Oct 22 | 512x512 | in use | 
+| [SD 2.1](https://huggingface.co/stabilityai/stable-diffusion-2-1) | Nov 22 | 768x768 | obsolete |
+| [**SDXL 1.0**](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0) | Jul 23 | 1024x1024 | current |
+| [Stable Cascasde](https://huggingface.co/stabilityai/stable-cascade) | Feb 24 | > 1024x1024 | research |
+| SD 3.0 | ~2024 | | soon™ |
 
-`ais-brickz hummingbird sipping nectar from a ral-friedegg flower`
-
----
-
-- **Model** / Checkpoints:
-  - trained neural network saved as `.safetensor`
-  - Base Models: SD 1.5 (~2GB), SDXL 1.0 (~6GB)
-  - Merges of the Base Models and further training
-- **LoRA** (Low-Rank Adaptation):
-  - technique for fine-tuning the model
-  - effective addition of specific concepts
-  - `.safetensor`, ~100MB
-  - often react to specific keywords
+Variants: Inpainting, Turbo, Video, 3D ...
 
 ---
 
-## [civitai.com](https://civitai.com/models)
+## How to run it?
 
-- Models
-- LoRAs
-- Images for Inspiration
+- Diffusion Process == Tensor Operations == Math
+- [Graphics Card](https://geizhals.de/?cat=gra16_512&xf=10825_04+-+GeForce+RTX~132_16384&sort=p#productlist) required (VRAM ≫ everything else)
+- Local:
+    - RTX 4090 24GB (~1800€)
+    - RTX 3090(Ti) 24GB (used: ~700€)
+    - RTX 4060 Ti 16GB (~450€)
+- Cloud: 
+    - IaaS, e.g. [Azure VM with GPU](https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-gpu) incl. A100 cluster
+    - PaaS, e.g. [rundiffusion](https://rundiffusion.com/) $.50/hr - UIs ready to use
+    - SaaS, [many specialized](https://www.futuretools.io/?tags-n5zn=image-improvement%7Cgenerative-art%7Ctext-to-video%7Cgenerative-video), some free / credit-based
+
+---
+
+## How do I interact with it?
+
+| UI | Reason to use | 
+| -:|:- |
+| [Python](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0#%F0%9F%A7%A8-diffusers) | Tech Demo |
+| [Fooocus](https://github.com/lllyasviel/Fooocus) | Easy to install and use, great results |
+| [A1111](https://github.com/AUTOMATIC1111/stable-diffusion-webui) | Large userbase, many functions |
+| [ComfyUI](https://github.com/comfyanonymous/ComfyUI) | Tinkering, create complex workflows |
+
+---
+
+## ComfyUI: Default Workflow
+
+![width:1100](workflows/basic.workflow.png)
+
+---
+
+## What is a Checkpoint?
+
+- **Model**: Pre-trained weights (SD 1.5: 860M, SDXL: 3.5B x2) for generating images, (the *Brain*)
+- **CLIP** (Contrastive Language–Image Pretraining):<br> Convert text to **conditioning** (the *Instructions*)
+- **VAE** (Variational Autoencoder): <br> Encode images from and to latent space (the *Canvas*)
+
+Distributed as `.safetensor` files,
+e.g. SD 1.5 (~2GB), SDXL 1.0 (~6GB)
+
+---
+
+## KSampler Options
+
+- **Steps**: 
+- **CFG**:
+- **Sampler**: A sampling method used during the generation process to better refine and select the image outputs based on certain criteria or conditions. (e.g. Euler, DPM++2M)
+- **Scheduler**: A mechanism that controls the rate and pattern at which noise is added or removed during the diffusion process. (e.g. Normal, [Karras](https://arxiv.org/abs/2206.00364))
+- **Denoise**:
+
+---
+
+## Nodes
+
+![bg right height:750](images/security_cat_in_medival_armor_guarding_a_computer.png)
+
+- ComfyUI Custom Nodes are peoples GitHub repos
+- Can install Python packages
+- Can download models
+- Models can contain code
+
+Use Docker
+
+---
+
+## ComfyUI: Efficiency Nodes
+
+![height:550](workflows/efficiency.workflow.png)
+
+---
+
+## ComfyUI: XY-Plots
+
+![height:550](workflows/xy-steps-cfg.png)
 
 ---
 
@@ -93,86 +157,79 @@ Note: Deterministic with same settings + seed!
 
 - Loads of wrong, old, or contradicting information
   - cargo cult from years ago
-  - e.g.: big blocks of negative prompts
-  - photorealism does not mean what you want, use `photo`
+    - e.g.: big blocks of negative prompts
+  - `photorealism` does not mean what you want
+    - use `photo`
 - Use Braces for emphasis (man) (handsome:1.5)
+- Use prompt styler for easy great results
 
 ---
 
-## Example: A11111
-
-(Read: automatic eleven eleven)
+## ComfyUI: Negative Prompts
 
 ---
 
-- **Scheduler**: A mechanism that controls the rate and pattern at which noise is added or removed during the diffusion process. (Normal, [Karras](https://arxiv.org/abs/2206.00364))
-- **Sampler**: A sampling method used during the generation process to better refine and select the image outputs based on certain criteria or conditions. (Euler, DPM++ 2M)
+## ComfyUI: Prompt Styler
+
+![width:1100](workflows/prompt-styler.workflow.png)
+
+<!--
+a ufo over a remote 1850 hamlet in the hills of west virginia, beaming up a cow
+-->
 
 ---
 
-## Example: ComfyUI
+## User Contributions
+
+- User-Trained Checkpoints
+- **LoRA** (Low-Rank Adaptation):
+  - technique for fine-tuning the model
+  - effective addition of specific concepts
+  - `.safetensor`, ~100MB
+  - often react to specific keywords
+- [civit.ai](https://civitai.com/)
+  - Models, LoRAs ...
+  - Images for Inspiration
 
 ---
 
-- **CLIP** (Contrastive Language–Image Pretraining): Model used for text-to-image tasks, guiding the image generation to align with textual descriptions.
-- **VAE** (Variational Autoencoder): Encode images into a latent space, on which the diffusion process acts.
+## ComfyUI: LoRA
+
+[Juggernaut XL](https://civitai.com/models/133005?modelVersionId=288982) + [Bricks Style](https://civitai.com/models/274576/bricks-style-sdxl) + [Fried Egg Style](https://civitai.com/models/255828/fried-egg-style-lora-15sdxl)
+
+![height:500](workflows/lora.workflow.png)
 
 ---
 
-## Examples: ComfyUI <br> Advanced Workflows
-
-- FaceDetailer
-- Upscaler
-- Input Image Step Skip (>Latent)
-- Control Net for [Poses](https://openposes.com/) (>Conditioning)
-- IP Adapter Face ID (>Model)
+## ComfyUI: Upscale
 
 ---
 
-## GUIs
-
-- Fooocus: Just works - easy results (SDXL only)
-- A1111: OG. Many tutorials, many plugins
-- ComfyUI: Learning Cliff, in-detail configuration
-- SD.Next / Vlad / Easy Diffusion: A1111, but less 💩
-- Invoke AI: Mix of A1111 and ComfyUI
+## ComfyUI: Recolor
 
 ---
 
-## Notes on GUIs
-
-- You *could* run everything with Python script (don't)
-- GUIs: Python-Webserver + CUDA-Torch
-- Security Nightmare
-  - Random Python Repos
-  - Downloads even more repos
-  - Auto updates, auto pip installs
-  - Downloads GB of stuff
-- stable-diffusion-webui-docker exists
-  - ... but does not work that well with Plugins
+## ComfyUI: Poses [openposes.com](https://openposes.com/)
 
 ---
 
-## Run locally
-
-- GTX 1060 6 GB:
-  - SD 1.5: ~20 sec/image
-  - complex SDXL 1.0 workflow: 5+ min/image
-- VRAM ≫ everything else
-- GTX 4090 24 GB is the best consumer card (~1900€)
-- other Nvidia Cards w/ 16GB start at [450€+](https://geizhals.de/?cat=gra16_512&xf=10825_04+-+GeForce+RTX%7E132_16384)
-- it *does* work with AMD (don't)
+## ComfyUI: Depth Map
 
 ---
 
-## Run in the Cloud
+## ComfyUI: IP Adapter
 
-- Google Colab (got kicked on free tier)
-- rundiffusion.com ~0.50$/h
-- runpod.io / vast.ai
-- ...
+---
 
-but then its running in the cloud ...
+## ComfyUI: Face ID
+
+---
+
+## ComfyUI: 3D
+
+---
+
+## ComfyUI: Video
 
 ---
 
