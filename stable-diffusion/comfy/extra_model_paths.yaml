@@ -1,0 +1,11 @@
+stablediffusion:
+    base_path: /workspace/resources/
+    checkpoints: checkpoints/
+    clip: clip/
+    clip_vision: clip_vision/
+    configs: configs/
+    controlnet: controlnet/
+    embeddings: embeddings/
+    loras: loras/
+    upscale_models: upscale_models/
+    vae: vae/

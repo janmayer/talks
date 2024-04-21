@@ -133,7 +133,7 @@ e.g. SD 1.5 (~2GB), SDXL 1.0 (~6GB)
 ![bg right height:750](images/security_cat_in_medival_armor_guarding_a_computer.png)
 
 - ComfyUI Custom Nodes are peoples GitHub repos
-- Can install Python packages
+- Auto install Python packages
 - Can download models
 - Models can contain code
 
@@ -141,7 +141,7 @@ Use Docker
 
 ---
 
-## ComfyUI: Efficiency Nodes
+## ComfyUI: Community Nodes
 
 ![height:550](workflows/efficiency.workflow.png)
 
@@ -153,13 +153,35 @@ Use Docker
 
 ---
 
-## Prompting
+## Community: [civit.ai](https://civitai.com/)
 
+- User-Trained Checkpoints, LoRAs, 
+- Images for Inspiration
+
+---
+
+## Juggernaut XL Lightning
+
+![width:1100](workflows/juggernaut-lightning.workflow.png)
+
+<!--
+professional Portrait photo of Elon Musk in a black leather jacket in a cannabis plantation on planet Mars, red mountains in the background, black sky, inspirational, iconic, 8k, detailed, golden hour, beautiful day
+-->
+
+---
+
+# Prompting
+
+---
+
+## Prompting 101
+
+- Just describe what you want
+  - Some models like "tags" more
+  - Some newer methods like long descriptions
 - Loads of wrong, old, or contradicting information
-  - cargo cult from years ago
-    - e.g.: big blocks of negative prompts
-  - `photorealism` does not mean what you want
-    - use `photo`
+  - cargo cult: big blocks of negative prompts
+  - `photorealism` does not mean `photo`
 - Use Braces for emphasis (man) (handsome:1.5)
 - Use prompt styler for easy great results
 
@@ -179,17 +201,33 @@ a ufo over a remote 1850 hamlet in the hills of west virginia, beaming up a cow
 
 ---
 
-## User Contributions
+## Guess The Prompt
 
-- User-Trained Checkpoints
-- **LoRA** (Low-Rank Adaptation):
+![width:500](workflows/guess-the-prompt-a.png)
+<!-- The Scream by Vincent van Gogh --> 
+
+---
+
+## Guess The Prompt
+
+![width:500](workflows/guess-the-prompt-b.png)
+<!-- Doge of Venice --> 
+
+---
+
+# Techniques
+
+- Tuning the Brain (Model)
+- Clarifying the Instructions (Conditioning)
+- Providing a pre-painted Canvas (Latent)
+
+---
+
+## LoRA (Low-Rank Adaptation)
   - technique for fine-tuning the model
   - effective addition of specific concepts
   - `.safetensor`, ~100MB
   - often react to specific keywords
-- [civit.ai](https://civitai.com/)
-  - Models, LoRAs ...
-  - Images for Inspiration
 
 ---
 
@@ -201,19 +239,45 @@ a ufo over a remote 1850 hamlet in the hills of west virginia, beaming up a cow
 
 ---
 
+## ComfyUI: img2img (via Latent)
+
+![height:500](workflows/img2img-latent.workflow.png)
+
+---
+
 ## ComfyUI: Upscale
 
----
-
-## ComfyUI: Recolor
+![height:500](workflows/magnify_enhance.workflow.png)
 
 ---
 
-## ComfyUI: Poses [openposes.com](https://openposes.com/)
+## ComfyUI: ControlNet Recolor
+
+![width:1100](workflows/controlnet-recolor.workflow.png)
 
 ---
 
-## ComfyUI: Depth Map
+## ComfyUI: ControlNet [Poses](https://openposes.com/)
+
+![height:500](workflows/controlnet-pose.workflow.png)
+
+---
+
+## ComfyUI: ControlNet DepthMap
+
+![height:500](workflows/controlnet-depth.workflow.png)
+
+---
+
+## ComfyUI: Preprocessors
+
+![width:1100](workflows/preprocessors-a.png)
+
+---
+
+## ComfyUI: Preprocessors
+
+![width:1100](workflows/preprocessors-b.png)
 
 ---
 

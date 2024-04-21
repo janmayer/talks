@@ -1,0 +1,27 @@
+version: '3.9'
+
+volumes:
+  comfyui-venv:
+  stablediffusion:
+    external: true
+
+services:
+  comfyui:
+    container_name: comfyui
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8188:8188"
+    volumes:
+      - .:/workspace/ComfyUI
+      - comfyui-venv:/workspace/venv
+      - stablediffusion:/workspace/resources:ro
+    command: bash -c "if [[ ! -f "/workspace/venv/bin/activate" ]]; then python -m venv /workspace/venv/ --system-site-packages; pip install -r /workspace/ComfyUI/requirements.txt; fi; source /workspace/venv/bin/activate; python /workspace/ComfyUI/main.py --listen --highvram"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['0']
+              capabilities: [gpu]
