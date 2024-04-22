@@ -12,11 +12,14 @@ Jan Mayer, 26.04.2024
 
 ---
 
+<!--
 ## Example: Fooocus
 
 `hummingbird sipping nectar from a flower`
 
 ---
+
+-->
 
 ## Stable Diffusion?
 
@@ -166,6 +169,12 @@ Use Docker
 
 <!--
 professional Portrait photo of Elon Musk in a black leather jacket in a cannabis plantation on planet Mars, red mountains in the background, black sky, inspirational, iconic, 8k, detailed, golden hour, beautiful day
+
+a sports car made out of potatoes
+
+car made out of croissants
+
+closeup photo of an ice cream sundae in a glass with a cherry on top on a wooden dining table outside a small busy pedestrian shopping alley, beautiful sunny day, Florence, Italy, 
 -->
 
 ---
@@ -177,13 +186,18 @@ professional Portrait photo of Elon Musk in a black leather jacket in a cannabis
 ## Prompting 101
 
 - Just describe what you want
-  - Some models like "tags" more
-  - Some newer methods like long descriptions
+  - most models like "tags"
+  - some newer methods like long descriptions
+  - start with empty negative prompt
 - Loads of wrong, old, or contradicting information
   - cargo cult: big blocks of negative prompts
   - `photorealism` does not mean `photo`
 - Use Braces for emphasis (man) (handsome:1.5)
 - Use prompt styler for easy great results
+
+<!--
+https://civitai.com/images/10236552
+-->
 
 ---
 
@@ -269,6 +283,12 @@ a ufo over a remote 1850 hamlet in the hills of west virginia, beaming up a cow
 
 ---
 
+## How to draw an Owl
+
+![height:500](workflows/sketch.workflow.png)
+
+---
+
 ## ComfyUI: Preprocessors
 
 ![width:1100](workflows/preprocessors-a.png)
@@ -283,6 +303,10 @@ a ufo over a remote 1850 hamlet in the hills of west virginia, beaming up a cow
 
 ## ComfyUI: IP Adapter
 
+<!--
+Jacket
+-->
+
 ---
 
 ## ComfyUI: Face ID
@@ -294,6 +318,14 @@ a ufo over a remote 1850 hamlet in the hills of west virginia, beaming up a cow
 ---
 
 ## ComfyUI: Video
+
+---
+
+## ComfyUI: Übertrieben
+
+---
+
+https://github.com/Acly/krita-ai-diffusion
 
 ---
 
