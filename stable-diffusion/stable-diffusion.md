@@ -330,7 +330,7 @@ Jacket
 
 [AI Photo Booth: Drawn by da Vinci](https://www.t-da.io/work/da-vinci-ai-photo-booth/)
 
-![height:500](ai-photo-booth_drawn-by-davinci.png)
+![height:500](images/ai-photo-booth_drawn-by-davinci.png)
 
 ---
 
