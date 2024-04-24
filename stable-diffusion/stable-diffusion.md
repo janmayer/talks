@@ -222,14 +222,14 @@ a ufo over a remote 1850 hamlet in the hills of west virginia, beaming up a cow
 
 ---
 
-## Guess The Prompt
+## Guess the Prompt
 
 ![width:500](workflows/guess-the-prompt-a.png)
 <!-- The Scream by Vincent van Gogh --> 
 
 ---
 
-## Guess The Prompt
+## Guess the Prompt
 
 ![width:500](workflows/guess-the-prompt-b.png)
 <!-- Doge of Venice --> 
@@ -310,13 +310,27 @@ a ufo over a remote 1850 hamlet in the hills of west virginia, beaming up a cow
 
 ## ComfyUI: IP Adapter
 
-<!--
-Jacket
--->
+![height:500](workflows/ipadapter.workflow.png)
+
+<!-- Jacket -->
+
+---
+
+## ComfyUI:Style Transfer
+
+![height:500](workflows/ipadapter-coloring.workflow.png)
+
+---
+
+## ComfyUI: Material Exchange
+
+![height:500](workflows/ipadapter-material-exchange.workflow.png)
 
 ---
 
 ## ComfyUI: Face ID
+
+![height:500](workflows/faceid.workflow.png)
 
 ---
 
