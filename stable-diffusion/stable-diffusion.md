@@ -54,13 +54,13 @@ Note: Deterministic with same settings + seed!
 
 ---
 
-## Releases
+## Base Models
 
-| [Family](https://medium.com/@promptingpixels/comparing-stable-diffusion-models-2c1dc9919ab7)     | Release | Resolution |   |
+| [Family](https://medium.com/@promptingpixels/comparing-stable-diffusion-models-2c1dc9919ab7)     | Release | Resolution | Usage |
 |-----------:|--------:|------------| - |
 | SD <1.5    | ~2022   |            | obsolete |
-| [**SD 1.5**](https://huggingface.co/runwayml/stable-diffusion-v1-5) | Oct 22 | 512x512 | in use | 
-| [SD 2.1](https://huggingface.co/stabilityai/stable-diffusion-2-1) | Nov 22 | 768x768 | obsolete |
+| [**SD 1.5**](https://huggingface.co/runwayml/stable-diffusion-v1-5) | Oct 22 | 512x512 | in use |
+| [SD 2.x](https://huggingface.co/stabilityai/stable-diffusion-2-1) | Nov 22 | 768x768 | obsolete |
 | [**SDXL 1.0**](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0) | Jul 23 | 1024x1024 | current |
 | [Stable Cascasde](https://huggingface.co/stabilityai/stable-cascade) | Feb 24 | > 1024x1024 | research |
 | SD 3.0 | ~2024 | | soon™ |
@@ -77,7 +77,7 @@ Variants: Inpainting, Turbo, Video, 3D ...
     - RTX 4090 24GB (~1800€)
     - RTX 3090(Ti) 24GB (used: ~700€)
     - RTX 4060 Ti 16GB (~450€)
-- Cloud: 
+- Cloud:
     - IaaS, e.g. [Azure VM with GPU](https://learn.microsoft.com/en-us/azure/virtual-machines/sizes-gpu) up to A100 cluster
     - PaaS, e.g. [rundiffusion](https://rundiffusion.com/) $.50/hr - UIs ready to use
     - SaaS, [many specialized](https://www.futuretools.io/?tags-n5zn=image-improvement%7Cgenerative-art%7Ctext-to-video%7Cgenerative-video), some free / credit-based
@@ -86,7 +86,7 @@ Variants: Inpainting, Turbo, Video, 3D ...
 
 ## How do I interact with it?
 
-| UI | Reason to use | 
+| UI | Reason to use |
 | -:|:- |
 | [Scripts](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0#%F0%9F%A7%A8-diffusers) | Tech Demo |
 | [Fooocus](https://github.com/lllyasviel/Fooocus) | Easy to install and use, great results |
@@ -160,7 +160,7 @@ e.g. SD 1.5 (~2GB), SDXL 1.0 (~6GB)
 
 ## Community: [civit.ai](https://civitai.com/)
 
-- User-Trained Checkpoints, LoRAs, ... 
+- User-Trained Checkpoints, LoRAs, ...
 - Images for Inspiration
 
 ---
@@ -176,7 +176,7 @@ a sports car made out of potatoes
 
 car made out of croissants
 
-closeup photo of an ice cream sundae in a glass with a cherry on top on a wooden dining table outside a small busy pedestrian shopping alley, beautiful sunny day, Florence, Italy, 
+closeup photo of an ice cream sundae in a glass with a cherry on top on a wooden dining table outside a small busy pedestrian shopping alley, beautiful sunny day, Florence, Italy,
 -->
 
 ---
@@ -225,16 +225,18 @@ a ufo over a remote 1850 hamlet in the hills of west virginia, beaming up a cow
 ## Guess the Prompt
 
 ![width:500](workflows/guess-the-prompt-a.png)
-<!-- The Scream by Vincent van Gogh --> 
+<!-- The Scream by Vincent van Gogh -->
 
 ---
 
 ## Guess the Prompt
 
 ![width:500](workflows/guess-the-prompt-b.png)
-<!-- Doge of Venice --> 
+<!-- Doge of Venice -->
 
 ---
+
+> That sure is pretty, but not what I asked for ...
 
 # Techniques
 
