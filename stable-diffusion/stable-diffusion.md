@@ -266,11 +266,14 @@ a ufo over a remote 1850 hamlet in the hills of west virginia, beaming up a cow
 
 ![height:500](workflows/img2img-latent.workflow.png)
 
+<!--
+professional portrait of link from zelda, golden hour, outside an ancient temple
+-->
 ---
 
-## ComfyUI: Upscale
+## ComfyUI: ControlNet DepthMap
 
-![height:500](workflows/magnify_enhance.workflow.png)
+![height:500](workflows/controlnet-depth.workflow.png)
 
 ---
 
@@ -283,12 +286,6 @@ a ufo over a remote 1850 hamlet in the hills of west virginia, beaming up a cow
 ## ComfyUI: ControlNet [Poses](https://openposes.com/)
 
 ![height:500](workflows/controlnet-pose.workflow.png)
-
----
-
-## ComfyUI: ControlNet DepthMap
-
-![height:500](workflows/controlnet-depth.workflow.png)
 
 ---
 
@@ -310,11 +307,18 @@ a ufo over a remote 1850 hamlet in the hills of west virginia, beaming up a cow
 
 ---
 
+## ComfyUI: Upscale
+
+![height:500](workflows/magnify_enhance.workflow.png)
+
+---
+
 ## ComfyUI: IP Adapter
 
 ![height:500](workflows/ipadapter.workflow.png)
 
 <!-- Jacket -->
+<!-- photo of a soccer player in a stadium, passing the ball, marble statue -->
 
 ---
 
